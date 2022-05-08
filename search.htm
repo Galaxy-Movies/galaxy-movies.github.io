@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Search</title>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+	<style>
+		@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200&display=swap');
+
+		*{
+			margin: 0;
+			padding: 0;
+			font-family: 'Source Sans Pro', sans-serif;
+		}
+		
+		body{
+			display: flex;
+			flex-direction: row;
+			justify-content: center;
+			align-items: center;
+			/*background-image: url('background.gif');
+			background-repeat: no-repeat;
+			background-size: 100% 100%;
+			background-attachment: fixed;*/
+			user-select: none;
+		}
+		
+		.middle-content{
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+		}
+		div.container{
+			display: flex;
+			flex-flow: wrap row;
+			width: 52%;
+			border: 2px solid black;
+			justify-content: space-around;
+			align-content: flex-start;
+			align-items: flex-start;
+		}
+
+		div.container .grid-view{
+			display: flex;
+			flex-flow: wrap row;
+			width: 100%;
+			justify-content: space-around;
+			align-content: flex-start;
+			align-items: flex-start;
+
+		}
+		div.container .list-view{
+			display: none;
+			flex-flow: wrap row;
+			width: 100%;
+			justify-content: space-around;
+			align-content: flex-start;
+			align-items: flex-start;
+
+		}
+		
+		.container .movie {
+			margin: 5px;
+			margin-bottom: 15px;
+		}
+		
+		.movie img{
+			width: 160px;
+			height: 240px;
+			border-radius: 20px;
+		}
+		
+		.movie-details h2{
+			text-align: center;
+			white-space: wrap;
+			width: 160px;
+			word-wrap: break-word;
+			font-size: 20px;
+			
+		}
+		
+		a:link{
+			color: darkorange;
+			text-decoration: none;
+		}
+		
+		/*--------------------search bar----------------------*/
+		.search-container{
+			margin: 10px;
+			border: 2px solid black;
+			display: flex;
+			align-items: center;
+			background-color: orange;
+			border-radius: 50px;
+			height: 40px;
+		}
+		
+		#search-box{
+			border: none;
+			outline: none;
+			padding: 0px;
+			margin: 5px;
+			font-size: 25px;
+			font-weight: bold;
+			border-radius: 5px;
+			background-color: inherit;
+		}
+		
+		.material-icons.search{
+			float: left;
+			padding: 5px 0px 5px 10px;
+			cursor: pointer;
+			font-size: 25px;	
+		}
+		/*------------------List and grid icons---------------*/
+		
+		.grid-list input{
+			display: none;
+		}
+		.material-icons.displayIcon{
+			cursor: pointer;
+			color: orange;
+			font-size: 40px;
+			
+		}		
+		.material-icons.displayIcon:hover{
+			color: darkorange !important; 
+		}		
+		.material-icons.displayIcon:active{
+			color: orange !important; 
+		}
+		/*------------------ List view---------------*/
+		
+		.flex-link{
+			display: flex;
+			
+		}
+		
+		.movie-details .flex-title{
+			text-align: left;
+			font-size: 30px;
+			width: 100%;
+			padding-left: 10px;
+		}
+		
+		.movie-details p{
+			font-size: 20px;
+			color: black;
+			padding: 10px;
+		}
+
+	</style>
+</head>
+<body>
+	<div class="middle-content">
+		<form>
+			<div class="search-container">
+			<i class="material-icons search">search</i>
+			<input type="text" id="search-box" placeholder=" Search movies..." onkeyup="search()">
+			</div>
+		</form>	
+		<div class="grid-list">
+		
+			<label for="grid-button"><i class="material-icons displayIcon"> grid_view</i></label>
+			<input type="radio" name="grid-list" id="grid-button" checked="checked" onclick="gridList()">
+			
+			<label for="list-button"><i class="material-icons displayIcon"> view_list</i></label>
+			<input type="radio" name="grid-list" id="list-button" onclick='gridList()'>
+		
+		</div>
+		<div class="container" id="movie-list">
+			<div class="grid-view">
+				<div class="movie">
+					<a href="Chess_Survey.htm">
+						<img src="img/ph1.jpg"> 
+						<div class="movie-details">
+							<h2>A Simple Favor</h2>
+						</div>
+					</a>
+				</div>
+				<div class="movie">
+					<a href="Chess_Survey.htm">
+						<img src="img/ph2.jpg"> 
+						<div class="movie-details">
+							<h2>Annabelles</h2>
+						</div>
+					</a>
+				</div>
+				<div class="movie">
+					<a href="Chess_Survey.htm">
+						<img src="img/ph3.jpg"> 
+						<div class="movie-details">
+							<h2>Deep Water</h2>
+						</div>
+					</a>
+				</div>
+				<div class="movie">
+					<a href="Chess_Survey.htm">
+						<img src="img/ph4.jpg"> 
+						<div class="movie-details">
+							<h2>Divergent</h2>
+						</div>
+					</a>
+				</div>
+				<div class="movie">
+					<a href="Chess_Survey.htm">
+						<img src="img/ph5.jpg"> 
+						<div class="movie-details">
+							<h2>Escape From Pretoria</h2>
+						</div>
+					</a>
+				</div>
+				<div class="movie">
+					<a href="Chess_Survey.htm">
+						<img src="img/ph6.jpg"> 
+						<div class="movie-details">
+							<h2>Free Guy</h2>
+						</div>
+					</a>
+				</div>
+				<div class="movie">
+					<a href="Chess_Survey.htm">
+						<img src="img/ph7.jpg"> 
+						<div class="movie-details">
+							<h2>I Care A Lot</h2>
+						</div>
+					</a>
+				</div>
+				<div class="movie">
+					<a href="Chess_Survey.htm">
+						<img src="img/ph8.jpg"> 
+						<div class="movie-details">
+							<h2>Jungle</h2>
+						</div>
+					</a>
+				</div>
+				<div class="movie">
+					<a href="Chess_Survey.htm">
+						<img src="img/ph9.jpg"> 
+						<div class="movie-details">
+							<h2>Lucy</h2>
+						</div>
+					</a>
+				</div>
+				<div class="movie">
+					<a href="Chess_Survey.htm">
+						<img src="img/ph10.jpg"> 
+						<div class="movie-details">
+							<h2>Malignant</h2>
+						</div>
+					</a>
+				</div>
+				<div class="movie">
+					<a href="Chess_Survey.htm">
+						<img src="img/ph11.jpg"> 
+						<div class="movie-details">
+							<h2>Shutter Island</h2>
+						</div>
+					</a>
+				</div>
+				<div class="movie">
+					<a href="Chess_Survey.htm">
+						<img src="img/ph12.jpg"> 
+						<div class="movie-details">
+							<h2>The Devil All The Time</h2>
+						</div>
+					</a>
+				</div>
+				<div class="movie">
+					<a href="Chess_Survey.htm">
+						<img src="img/ph13.jpg"> 
+						<div class="movie-details">
+							<h2>The Power Of The Dog</h2>
+						</div>
+					</a>
+				</div>
+				<div class="movie">
+					<a href="Chess_Survey.htm">
+						<img src="img/ph14.jpg"> 
+						<div class="movie-details">
+							<h2>The Tomorrow War</h2>
+						</div>
+					</a>
+				</div>
+				<div class="movie">
+					<a href="Chess_Survey.htm">
+						<img src="img/ph15.jpg"> 
+						<div class="movie-details">
+							<h2>The Unforgivable</h2>
+						</div>
+					</a>
+				</div>
+				<div class="movie">
+					<a href="Chess_Survey.htm">
+						<img src="img/ph1.jpg"> 
+						<div class="movie-details">
+							<h2>A Simple Favor</h2>
+						</div>
+					</a>
+				</div>
+			</div>			
+			<div class="list-view"><!------------------- List view----------------------------------------------------------------->
+				<div class="movie">
+					<a href="Chess_Survey.htm" class="flex-link">
+						<img src="img/ph1.jpg"> 
+						<div class="movie-details">
+							<h2 class="flex-title">A Simple Favor</h2>
+							<p>Stephanie, a single mother, along with Sean, Emily's husband,
+							set out to unravel the mystery behind Emily's disappearance.
+							However, they counter secrets much more than what they bargained for.</p>
+						</div>
+					</a>
+				</div>
+				<div class="movie">
+					<a href="Chess_Survey.htm" class="flex-link">
+						<img src="img/ph2.jpg"> 
+						<div class="movie-details">
+							<h2 class="flex-title">Annabelles</h2>
+							<p>Stephanie, a single mother, along with Sean, Emily's husband,
+							set out to unravel the mystery behind Emily's disappearance.
+							However, they counter secrets much more than what they bargained for.</p>
+						</div>
+					</a>
+				</div>
+				<div class="movie">
+					<a href="Chess_Survey.htm" class="flex-link">
+						<img src="img/ph3.jpg"> 
+						<div class="movie-details">
+							<h2 class="flex-title">Deep Water</h2>
+							<p>Stephanie, a single mother, along with Sean, Emily's husband,
+							set out to unravel the mystery behind Emily's disappearance.
+							However, they counter secrets much more than what they bargained for.</p>
+						</div>
+					</a>
+				</div>
+				<div class="movie">
+					<a href="Chess_Survey.htm" class="flex-link">
+						<img src="img/ph4.jpg"> 
+						<div class="movie-details">
+							<h2 class="flex-title">Divergent</h2>
+							<p>Stephanie, a single mother, along with Sean, Emily's husband,
+							set out to unravel the mystery behind Emily's disappearance.
+							However, they counter secrets much more than what they bargained for.</p>
+						</div>
+					</a>
+				</div>
+				<div class="movie">
+					<a href="Chess_Survey.htm" class="flex-link">
+						<img src="img/ph5.jpg"> 
+						<div class="movie-details">
+							<h2 class="flex-title">Escape From Pretoria</h2>
+							<p>Stephanie, a single mother, along with Sean, Emily's husband,
+							set out to unravel the mystery behind Emily's disappearance.
+							However, they counter secrets much more than what they bargained for.</p>
+						</div>
+					</a>
+				</div>
+				<div class="movie">
+					<a href="Chess_Survey.htm" class="flex-link">
+						<img src="img/ph6.jpg"> 
+						<div class="movie-details">
+							<h2 class="flex-title">Free Guy</h2>
+							<p>Stephanie, a single mother, along with Sean, Emily's husband,
+							set out to unravel the mystery behind Emily's disappearance.
+							However, they counter secrets much more than what they bargained for.</p>
+						</div>
+					</a>
+				</div>
+				<div class="movie">
+					<a href="Chess_Survey.htm" class="flex-link">
+						<img src="img/ph7.jpg"> 
+						<div class="movie-details">
+							<h2 class="flex-title">I Care A Lot</h2>
+							<p>Stephanie, a single mother, along with Sean, Emily's husband,
+							set out to unravel the mystery behind Emily's disappearance.
+							However, they counter secrets much more than what they bargained for.</p>
+						</div>
+					</a>
+				</div>
+				<div class="movie">
+					<a href="Chess_Survey.htm" class="flex-link">
+						<img src="img/ph8.jpg"> 
+						<div class="movie-details">
+							<h2 class="flex-title">Jungle</h2>
+							<p>Stephanie, a single mother, along with Sean, Emily's husband,
+							set out to unravel the mystery behind Emily's disappearance.
+							However, they counter secrets much more than what they bargained for.</p>
+						</div>
+					</a>
+				</div>
+				<div class="movie">
+					<a href="Chess_Survey.htm" class="flex-link">
+						<img src="img/ph9.jpg"> 
+						<div class="movie-details">
+							<h2 class="flex-title">Lucy</h2>
+							<p>Stephanie, a single mother, along with Sean, Emily's husband,
+							set out to unravel the mystery behind Emily's disappearance.
+							However, they counter secrets much more than what they bargained for.</p>
+						</div>
+					</a>
+				</div>
+				<div class="movie">
+					<a href="Chess_Survey.htm" class="flex-link">
+						<img src="img/ph10.jpg"> 
+						<div class="movie-details">
+							<h2 class="flex-title">Malignant</h2>
+							<p>Stephanie, a single mother, along with Sean, Emily's husband,
+							set out to unravel the mystery behind Emily's disappearance.
+							However, they counter secrets much more than what they bargained for.</p>
+						</div>
+					</a>
+				</div>
+				<div class="movie">
+					<a href="Chess_Survey.htm" class="flex-link">
+						<img src="img/ph11.jpg"> 
+						<div class="movie-details">
+							<h2 class="flex-title">Shutter Island</h2>
+							<p>Stephanie, a single mother, along with Sean, Emily's husband,
+							set out to unravel the mystery behind Emily's disappearance.
+							However, they counter secrets much more than what they bargained for.</p>
+						</div>
+					</a>
+				</div>
+				<div class="movie">
+					<a href="Chess_Survey.htm" class="flex-link">
+						<img src="img/ph12.jpg"> 
+						<div class="movie-details">
+							<h2 class="flex-title">The Devil All The Time</h2>
+							<p>Stephanie, a single mother, along with Sean, Emily's husband,
+							set out to unravel the mystery behind Emily's disappearance.
+							However, they counter secrets much more than what they bargained for.</p>
+						</div>
+					</a>
+				</div>
+				<div class="movie">
+					<a href="Chess_Survey.htm" class="flex-link">
+						<img src="img/ph13.jpg"> 
+						<div class="movie-details">
+							<h2 class="flex-title">The Power Of The Dog</h2>
+							<p>Stephanie, a single mother, along with Sean, Emily's husband,
+							set out to unravel the mystery behind Emily's disappearance.
+							However, they counter secrets much more than what they bargained for.</p>
+						</div>
+					</a>
+				</div>
+				<div class="movie">
+					<a href="Chess_Survey.htm" class="flex-link">
+						<img src="img/ph14.jpg"> 
+						<div class="movie-details">
+							<h2 class="flex-title">The Tomorrow War</h2>
+							<p>Stephanie, a single mother, along with Sean, Emily's husband,
+							set out to unravel the mystery behind Emily's disappearance.
+							However, they counter secrets much more than what they bargained for.</p>
+						</div>
+					</a>
+				</div>
+				<div class="movie">
+					<a href="Chess_Survey.htm" class="flex-link">
+						<img src="img/ph15.jpg"> 
+						<div class="movie-details">
+							<h2 class="flex-title">The Unforgivable</h2>
+							<p>Stephanie, a single mother, along with Sean, Emily's husband,
+							set out to unravel the mystery behind Emily's disappearance.
+							However, they counter secrets much more than what they bargained for.</p>
+						</div>
+					</a>
+				</div>
+				<div class="movie">
+					<a href="Chess_Survey.htm" class="flex-link">
+						<img src="img/ph1.jpg"> 
+						<div class="movie-details" >
+							<h2 class="flex-title">A Simple Favor</h2>
+							<p>Stephanie, a single mother, along with Sean, Emily's husband,
+							set out to unravel the mystery behind Emily's disappearance.
+							However, they counter secrets much more than what they bargained for.</p>
+						</div>
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="js/search.js"></script>
+</body>
+	
+</html>

@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Survey</title>
+		
+		<style>
+			html {
+				scroll-behavior: smooth;
+			}
+			
+			body{
+			
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				font-size: 30px;
+			}
+			
+			.container{
+				display: flex;
+				flex-flow: wrap column;
+				justify-content: center;
+				align-items: center;
+				width: 70%;
+			}
+			
+			form{
+				width: 80%;
+			}
+			
+			ol{
+				padding-inline-start: 0px;
+			}
+			
+			div {
+				border: solid black 2px;
+				padding: 50px 50px;
+				margin: 50px 0px;
+			}
+			
+			input[type="radio"], input[type="checkbox"]{
+				display: none;
+			}
+			
+			textarea, label.text_label{
+				display: block;
+			}
+			input:checked + label{
+				background-color: grey !important;
+			}
+			label.radio_button:hover, label.check_box:hover {
+				border: solid white 2px;
+				background-color: lightgrey;
+				cursor: pointer;
+			}
+			label.radio_button:active, label.check_box:active {
+				background-color: white !important;
+			}
+
+			label.radio_button, label.check_box{
+				display: block;
+				margin: 15px 0px;
+				padding: 10px;
+			}
+
+			
+
+			
+		</style>
+	</head>
+	<body>
+	<div class="container">
+		<h1>Survey Form</h1>
+		<h5>Share your taste in movies with us</h1>
+		<p>Note: Personal quesions are optional, feel free to <a href="#movie-pref">skip them.</a></p>
+		<form target="_self" method="POST">
+			<fieldset id = "personal-info">
+				<legend>Personal Info</legend>
+					<ol>
+					<div>
+						<li>
+							<label for="first-name" class="text_label">What is your first name? </label>
+							<input id="first-name" type="text" placeholder="Enter your first name here" value="John" autocomplete="on" maxlength="15">
+						</li>
+					</div>
+					<div>
+						<li>
+							<label for="last-name" class="text_label">What is your last name? </label>
+							<input id="last-name" type="text" placeholder="Enter your last name here" value="Snow" autocomplete="on" maxlength="15">
+						</li>
+					</div>
+					<div>					
+						<li>
+							<label for="email" class="text_label">Enter your Email</label>
+							<input id="email" type="email" placeholder="We won't spam you" multiple>
+						</li>
+					</div>
+					<div>
+						<li>
+							<p>Choose your gender</p>
+							
+							<input type="radio" id="male" name="gender" value="male">
+							<label class="radio_button" for="male">Male</label>
+							
+							<input type="radio" id="female" name="gender" value="female">
+							<label class="radio_button"for="female">female</label>
+						</li>
+					</div>
+					<div>
+						<li>
+							<label for="age" class="text_label">How old are you? </label>
+							<input type="number" id="age" min="6" max="100" value="20"> <label for="age">years</label>	
+						</li>
+					</div>
+					</ol>
+			</fieldset>
+			
+			<fieldset id="movie-pref">
+				<legend>Movie Preferences</legend>
+					<ol start="6">
+					<div>
+						<li>
+							<p>Where do you prefer to watch a movie? </p>
+							
+							<input type="radio" id="cinema" name="fav-place" value="cinema" required>
+							<label class="radio_button" for="cinema">Cinema</label>
+							
+							<input type="radio" id="tv" name="fav-place" value="tv">
+							<label class="radio_button" for="tv">On TV</label>
+							
+							<input type="radio" id="internet" name="fav-place" value="internet">
+							<label class="radio_button" for="internet">On the internet</label>
+						</li>
+					</div>
+					<div>
+						<li>
+							<p>What type of movies do you like?</p>
+							
+							<input type="checkbox" id="action" name="fav-type" value="action">
+							<label class="check_box" for="action">Action</label>
+							
+							<input type="checkbox" id="horror" name="fav-type" value="horror">
+							<label class="check_box" for="horror">Horror</label>
+							
+							<input type="checkbox" id="drama" name="fav-type" value="drama">
+							<label class="check_box" for="drama">Drama</label>
+							
+							<input type="checkbox" id="romance" name="fav-type" value="romance">
+							<label class="check_box" for="romance">Romance</label>
+							
+							<input type="checkbox" id="comedy" name="fav-type" value="comedy">
+							<label class="check_box" for="comedy">Comedy</label>
+							
+							<input type="checkbox" id="documentry" name="fav-type" value="documentry">
+							<label class="check_box" for="documentry">Documentry</label>
+							
+							<input type="checkbox" id="adventure" name="fav-type" value="adventure">
+							<label class="check_box" for="adventure">Adventure</label>
+							
+						</li>
+					</div>
+					<div>
+						<li>
+							<p>How often do you watch movies? </p>
+							
+							<input onclick="$(this).parent().next()" type="radio" id="once-a-month" name="watching-time" value="once-a-month" rquired>
+							<label class="radio_button" for="once-a-month">Once a month</label>
+							
+							<input type="radio" id="once-a-week" name="watching-time" value="once-a-week">
+							<label class="radio_button" for="once-a-week">Once a week</label>
+							
+							<input type="radio" id="twice-a-week" name="watching-time" value="twice-a-week">
+							<label class="radio_button" for="twice-a-week">Twice a week</label>
+							
+							<input type="radio" id="three-to-five-a-week" name="watching-time" value="three-to-five-a-week">
+							<label class="radio_button" for="three-to-five-a-week">Three to five times a week</label>
+							
+							<input type="radio" id="every-day" name="watching-time" value="every-day">
+							<label class="radio_button" for="every-day">Every day</label>
+						</li>
+					</div>
+					<div>
+						<li>						
+							<p>What is the most important characteristic of a good movie? </p>
+							
+							<input type="radio" id="quality-of-story" name="fav-char" value="quality-of-story" required>
+							<label class="radio_button" for="quality-of-story">Quality of story</label>
+							
+							<input type="radio" id="acting" name="fav-char" value="acting">
+							<label class="radio_button" for="acting">Acting</label>
+							
+							<input type="radio" id="graphical-effects" name="fav-char" value="graphical-effects">
+							<label class="radio_button" for="graphical-effects">Graphical effects</label>
+							
+							<input type="radio" id="other-char" name="fav-char" value="other-char">
+							<label class="radio_button" for="other-char">Other</label>
+						</li>
+					</div>
+					<div>
+						<li>						
+							<p>What percentage of movies, that you've watched, do you consider bad or boring? </p>
+							
+							<input type="radio" id="ten-perc" name="boring" value="ten-perc" required onclick="this.parentElement.style.background-color = 'yellow'">
+							<label class="radio_button"  for="ten-perc">10%</label>
+							
+							<input type="radio" id="twenty-five-perc" name="boring" value="twenty-five-perc">
+							<label class="radio_button" for="twenty-five-perc">25%</label>
+							
+							<input type="radio" id="fourty-per" name="boring" value="fourty-per">
+							<label class="radio_button" for="fourty-per">40%</label>
+							
+							<input type="radio" id="fifty-per" name="boring" value="fifty-per">
+							<label class="radio_button" for="fifty-per">50%</label>
+							
+							<input type="radio" id="seventy-per" name="boring" value="seventy-per">
+							<label class="radio_button" for="seventy-per">70%</label>
+						</li>
+					</div>
+					<div>
+						<li>						
+							<label for="soundtrack" class="text_label">How important is the soundtrack to you in a movie?</label>
+							<select id="soundtrack" name="soundtrack" >
+								<option value="very-important">Very important</option>
+								<option value="important">Important</option>
+								<option value="unimportant">Unimportant</option>
+								<option value="not-important">Not important at all</option>
+							</select>
+						</li>
+					</div>
+					<div>
+						<li>
+							<textarea name="message" rows="10" cols="20" placeholder="Tell us about the best movie you've seen in brief details"  required> </textarea>
+						</li>
+					</div>
+					</ol>
+					<input type="reset" onclick="confirm('Are you sure you want to erase all answers?')">
+					<input type="submit" value="Submit Answers" onclick="confirm('Are you sure you want to submit? ')">
+			</fieldset>
+		</form>
+	</div>
+		<script>
+		
+		
+		
+		</script>
+	</body>
+</html>
