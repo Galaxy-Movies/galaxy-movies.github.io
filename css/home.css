@@ -1,0 +1,452 @@
+* {
+    margin: 0%;
+    padding: 0%;
+
+}
+
+body {
+    font-family: 'Cairo', sans-serif;
+    font-family: 'Inter', sans-serif;
+    font-family: 'Merriweather', serif;
+    font-family: 'Open Sans', sans-serif;
+    font-family: 'Orelega One', cursive;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url(../imgs/action.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    /* عشان تغطي كله */
+    height: 130vh;
+    /* عشان تاخد الشاشه كلها */
+    background-attachment: fixed;
+}
+
+header {
+    display: flex;
+    /* هي اللي خلتهم تيجي علي الجنب كده */
+    justify-content: space-between;
+    /* بتوريك ازاي توزع المساحه بين عناصر المحتوي واللي حواليها */
+    /* height: 10vh; */
+    width: 100%;
+}
+
+.logo {
+    margin-left: 100px;
+    margin-top: 30px;
+}
+
+.logo img {
+    height: 7vh;
+    margin-bottom: 10px;
+}
+
+.logo h2 {
+    color: white;
+    margin-top: -64px;
+    /* "margin bottom" كان ممكن اكتبها  */
+    margin-left: 60px;
+    ;
+    font-weight: 100;
+    font-size: xxx-large;
+}
+
+.logo h2 span {
+    color:#80deea;
+}
+.up {
+    position: fixed;
+    bottom: 10px;
+    right: -30px;
+    background-color: white;
+    color: teal;
+    font-weight: bold;
+    font-size: 12px;
+    padding: 5px;
+    border-radius: 4px;
+    font-family: Arial, Tahoma;
+    cursor: pointer;
+    transition: 0.2s;
+    z-index: 99;
+      }
+.up.show {
+        cursor: pointer;
+        right: 10px;
+ }
+nav ul {
+    display: flex;
+    /* انها هتخلي كل العناصر دي تكون في العرض بتاعها كله display flexالفكره من ال */
+    list-style: none;
+    /* عشان نشيل النقط السوده اللي بتبقي حوالين الليست لاني عامل الحاجات اللي في البار ليست */
+}
+
+.nav ul li a {
+    position: relative;
+    top: 34px;
+    text-decoration: none;
+    padding: 1px 30px;
+    justify-content: space-between;
+    /* color: rgb(169, 169, 169); */
+    color: white;
+    font-size: 24px;
+    border-radius: 15px;
+    FONT-FAMILY: system-ui;
+}
+
+.user {
+    position: relative;
+    top: 38px;
+
+}
+
+.user a {
+    text-decoration: none;
+    margin-right: 40px;
+    /* لانها كانت لازقه في اليمين */
+    color: white;
+    width: 50px;
+    font-size: 24px;
+    padding: 1px 30px;
+    border-radius: 20px;
+    background-color: black;
+    font-family: system-ui;
+}
+
+.user a:hover {
+    transition: 0.5s;
+    background-color: white;
+    color: black;
+}
+
+.nav ul li a:hover {
+    color: black;
+    transition: 0.5s;
+    font-weight: 400;
+    background-color: white;
+}
+.search{
+    padding: 10px 10px;
+    margin top: 15px;
+    position: relative;
+    left: 640px;
+    bottom: 112px;
+    font-family: system-ui;
+    width: 150px;
+    background-color: #100c0c;
+    border-radius: 15px;
+    text-align: center;
+    cursor: text;
+}
+.search a{
+    text-decoration: none;
+    color: #adadad80;
+    cursor: text;
+    /* هو اوريدي ده لينك ده انا عايزو لما يجي يعمل شكل كانه هيكتب ولما ادوس يوديه علي صفحه تانيه */
+}
+
+.homepage {
+    position: absolute;
+    /* عشان تبقي كانها كده مش موجوده في الصفحه وبما انها كلام وده صوره فطبيعي هيظهر بس كطبقات الصوره فوقيها */
+    margin-top: 100px;
+    margin-left: 100px;
+    color: white;
+}
+
+.homepage span {
+    line-height: 60.6px;
+    FONT-FAMILY: system-ui;
+    FONT-SIZE: 20PX;
+    COLOR: teal;
+    position: relative;
+    top: 14px;
+}
+
+.homepage h1 {
+    line-height: 67.6px;
+    FONT-FAMILY: system-ui;
+    FONT-SIZE: 35PX;
+    COLOR: WHITE;
+}
+
+.homepage p {
+
+    line-height: 67.6px;
+    FONT-FAMILY: system-ui;
+    FONT-SIZE: 20PX;
+    COLOR: WHITE;
+}
+
+.image {
+    margin-top: 150px;
+    margin-left: 150px;
+    /* زات نفسه مش ماسك الصوره div هنا انا ماسك ال */
+    margin-right: 150px;
+}
+
+.image img {
+
+    /* div هنا انا ماسك الصوره اللي جوا ال */
+    /* height: 360px; */
+    height: 400px;
+    float: right;
+    /* عشان تتحرك لاني انا كنت مديها بوزيشن ابسليوت مش ريلاتيف */
+    border-radius: 20px;
+}
+
+.homepage a {
+    margin-top: 10px;
+    margin-right: 10px;
+    text-decoration: none;
+    color: white;
+    FONT-FAMILY: system-ui;
+    text-transform: capitalize;
+    background-color: black;
+    padding: 3px 10px;
+    border: 1px soild white;
+    border-radius: 20px
+}
+
+.homepage a:hover {
+    background-color:white;
+    color: black;
+}
+
+/* .name-of-film1 {
+    color: white;
+} */
+
+.most-awarded {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    margin-top: 500px;
+    padding: 0px 20px;
+}
+
+.most-awarded .most {
+    text-decoration: none;
+    color: white;
+    font-size: 40px;
+    position: relative;
+}
+
+.contanier {
+    width: 70%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: nowrap;  /*غيرت دي من wrap -----------------------------------------------------------------------------------------------------*/
+    /* دي لو مثلا مدي اربع صور والصوره الاخيره بدل ما يمد الصفحه بيخليها تنزل لتحت */
+    gap: 30px;
+    /* زي المارجن بس دي خاصيه في الفليكس */
+    align-items: center;
+    margin-top: 30px;
+}
+
+.ab-head {
+    width: 70%;
+    margin: auto;
+    border-bottom: 2px solid white;
+}
+
+.name-of-film1 {
+    display: flex;
+    flex-direction: column;
+    /* مش فاهمها */
+    gap: 2px;
+    FONT-FAMILY: system-ui;
+    color: white;
+}
+
+.name-of-film1 a {
+    text-decoration: none;
+    margin-top: 8px;
+    padding: 10px 12px;
+    color: white;
+    border-radius: 15px;
+    line-height: 2px;
+    border: 1px solid white;
+    width: fit-content;
+    transition: 0.5s;
+    text-transform: capitalize;
+}
+
+.name-of-film1 a:hover {
+    background-color: white;
+    color: black;
+}
+/* **********************************/
+/* THE SECOND SECTION */
+.Action {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    margin-top: 1150px;
+    padding: 0px 20px;
+}
+
+.contanier2 {
+    position: absloute;
+    width: 70%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: nowrap; /*غيرت دي من wrap -----------------------------------------------------------------------------------------------------*/
+    /* دي لو مثلا مدي اربع صور والصوره الاخيره بدل ما يمد الصفحه بيخليها تنزل لتحت */
+    gap: 30px;
+    /* زي المارجن بس دي خاصيه في الفليكس */
+    align-items: center;
+    margin-top: 30px;
+}
+
+.ab-head2{
+    width: 70%;
+    margin: auto;
+    border-bottom: 2px solid white;
+}
+.ab-head2 .most{
+    text-decoration: none;
+    color: white;
+    font-size: 40px;
+    position: relative;
+}
+.name-of-film2{
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    FONT-FAMILY: system-ui;
+    color: white;
+    /* height:; */
+}
+.name-of-film2 a{
+    text-decoration: none;
+    border: 1px solid white;
+    width:fit-content;
+    margin-top: 8px;
+    padding: 10px 12px;
+    border-radius: 15px;
+    line-height: 2px;   
+    color: white;
+    transition: 0.5s;
+    text-transform: capitalize;
+}
+.name-of-film2 a:hover{
+    background-color: white;
+    color: black;
+    /* هنا اول ما الماوس يجي عليهالون الخلفيه بيقلب ابيض والخط بيقلب اسود */
+}
+/* ******************************************/
+/* thired part */
+.series {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    margin-top: 1800px;
+    padding: 0px 20px;
+}
+
+.contanier3 {
+    position: absloute;
+    width: 70%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: nowrap; /*غيرت دي من wrap -----------------------------------------------------------------------------------------------------*/
+    /* دي لو مثلا مدي اربع صور والصوره الاخيره بدل ما يمد الصفحه بيخليها تنزل لتحت */
+    gap: 30px;
+    /* زي المارجن بس دي خاصيه في الفليكس */
+    align-items: center;
+    margin-top: 30px;
+}
+.ab-head3{
+    width: 70%;
+    margin: auto;
+    border-bottom: 2px solid white;
+}
+.ab-head3 .most{
+    text-decoration: none;
+    color: white;
+    font-size: 40px;
+    position: relative;
+}
+.name-of-film3{
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    FONT-FAMILY: system-ui;
+    color: white;
+    /* height:; */
+}
+.name-of-film3 a{
+    text-decoration: none;
+    border: 1px solid white;
+    width:fit-content;
+    margin-top: 8px;
+    padding: 10px 12px;
+    border-radius: 15px;
+    line-height: 2px;   
+    color: white;
+    transition: 0.5s;
+    text-transform: capitalize;
+}
+.name-of-film3 a:hover{
+    background-color: white;
+    color: black;
+    /* هنا اول ما الماوس يجي عليهالون الخلفيه بيقلب ابيض والخط بيقلب اسود */
+}
+/* ******************************************************************************************* */
+.anime{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    margin-top: 2500px;
+    padding: 0px 20px;
+}
+.contanier4 {
+    position: absloute;
+    width: 70%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: nowrap; /*غيرت دي من wrap -----------------------------------------------------------------------------------------------------*/
+    /* دي لو مثلا مدي اربع صور والصوره الاخيره بدل ما يمد الصفحه بيخليها تنزل لتحت */
+    gap: 30px;
+    /* زي المارجن بس دي خاصيه في الفليكس */
+    align-items: center;
+    margin-top: 30px;
+}
+.ab-head4{
+    width: 70%;
+    margin: auto;
+    border-bottom: 2px solid white;
+}
+.ab-head4 .most{
+    text-decoration: none;
+    color: white;
+    font-size: 40px;
+    position: relative;
+}
+.name-of-film4{
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    FONT-FAMILY: system-ui;
+    color: white;
+    /* height:; */
+}
+.name-of-film4 a{
+    text-decoration: none;
+    border: 1px solid white;
+    width:fit-content;
+    margin-top: 8px;
+    padding: 10px 12px;
+    border-radius: 15px;
+    line-height: 2px;   
+    color: white;
+    transition: 0.5s;
+    text-transform: capitalize;
+}
+.name-of-film4 a:hover{
+    background-color: white;
+    color: black;
+    /* هنا اول ما الماوس يجي عليهالون الخلفيه بيقلب ابيض والخط بيقلب اسود */
+}
+

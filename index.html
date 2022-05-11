@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="css/home.css">
+    <title>Galaxy</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cairo:wght@300&family=Inter:wght@300&family=Merriweather:wght@300&family=Open+Sans:wght@300&family=Orelega+One&display=swap"
+        rel="stylesheet">
+        <link rel="stylesheet" href="">
+
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+
+            <img src="imgs/e.png" alt="">
+             <h2>Gala<span>xy</span></h2> 
+        </div>
+        <!-- الزرار -->
+        <span class="up">Up</span>
+<script>
+    let span = document.querySelector(".up"); 
+window.onscroll = function () {
+    // span class="top" ال  بنمسك  كده 
+            // فانا عايزاظهر الزار عن جته معينه مثلا
+            //  اظهر الزرار باني احط عليه كلاس اسمه كزا لما يجي عن حته معينه
+            // ولو بعدت عن احته دي اشيل الكلاس اللي اسمه كزا
+  console.log(this.scrollY);
+  if (window.scrollY >= 200) {
+    span.classList.add("show");
+  } 
+  else {
+    span.classList.remove("show");
+  }
+  // تمام كده هيظهرلي الزار عند حته معينه
+};
+span.onclick = function () {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth",
+  });
+};
+</script>
+        <nav class="nav">
+            <ul>
+                <li><a href="index.html">home</a></li>
+                <li><a href="anime.html">anime</a></li>
+                <li><a href="movies.html">action</a></li>
+                <li><a href="series.html">series</a></li>
+                <li><a href="htmltopmovies.html">Top Rated</a></li>
+                <li><a href="htmlbestactors.html">Best Actors</a></li>
+            </ul>
+        </nav>
+        <div class="user">
+            <a href="login.html">Log In</a>
+        </div>
+    </header>
+    <section class="attractive">
+        <div class="homepage">
+            <span>LIVE NOW</span>
+            <h1> Jumanji: The Next Level</h1>
+            <p>Action,Adventure,comdy|2021|122 min</p>
+            <a href="" class="abdo">watch now</a>
+            <a href="" class="abdo">watch later</a>
+        </div>
+        <div class="image">
+            <img class="img2" src="imgs/adventure.jpg" alt="">
+        </div>
+        <div class="search">
+            <a href="search.html">Search here...</a>
+        </div>
+    </section>
+    <section class="most-awarded">
+        <div class="heading">
+            <div class="ab-head">
+                <a href="most-awarded.html" class="most">Most Awarded Films</a>
+            </div>
+
+            <div class="contanier">
+                <div class="movie-container">
+                    <div class="img">
+                        <img class="img2" src="imgs/movies/WmFwZndlY21tbWJtYm1qbVlwYWNtTGNtVHB2bHZOdg.jpg" alt="">
+                    </div>
+                    <div class="name-of-film1">
+                        <h4>West Side Story</h4>
+                        <h6>Romantic</h6>
+                        <a href="#" class="watch">watch now</a>
+                    </div>
+                </div>
+
+                <!-- ************************ -->
+                <div class="movie-container">
+                    <div class="img">
+                        <img class="img2" src="imgs/movies/WmFwZndlY21URW1ibVlidk51Y3hQbGNOSGt0dw.jpg" alt="">
+                    </div>
+                    <div class="name-of-film1">
+                        <h4>The Lord of the Rings: The Return of the King</h4>
+                        <h6>Action-Fantasy</h6>
+                        <a href="#" class="watch">watch now</a>
+                    </div>
+                </div>
+
+                <!-- ********************************************************* -->
+                <div class="movie-container">
+                    <div class="img">
+                        <img class="img2" src="imgs/movies/WmFwZndlY21UbW1UYm1UbXZSY21qdk5iY05idk5tbWc.jpg" alt="">
+                    </div>
+                    <div class="name-of-film1">
+                        <h4>Titanic</h4>
+                        <h6>Romantic</h6>
+                        <a href="#" class="watch">watch now</a>
+                    </div>
+                </div>
+
+                <!-- ************************************************************* -->
+            
+            </div>
+        </div>
+    </section>
+    <!-- *********************************************** -->
+    <br>
+     <section class="Action">
+        <div class="heading2">
+            <div class="ab-head2">
+                <a href="movies.html" class="most">Action Films</a>
+            </div>
+
+            <div class="contanier2">
+                <!-- **************************** -->
+                <div class="movie-container2">
+                    <div class="img2">
+                        <img class="" src="imgs/movies/dark-knight2008.jpg" alt="">
+                    </div>
+                    <div class="name-of-film2">
+                        <h4>dark-knight</h4>
+                        <h6>Action-Drama-Myster</h6>
+                        <a href="movies/bat.html" class="watch2">watch now</a>
+                    </div>
+                </div> 
+
+                <!-- ********************************************************* -->
+                <div class="movie-container2">
+                    <div class="img2">
+                        <img class="" src="imgs/movies/shang-chi2021.jpg" alt="">
+                    </div>
+                    <div class="name-of-film2">
+                        <h4>Shang-Chi and the Legend of the Ten Rings</h4>
+                        <h6>Action-Fantasy</h6>
+                        <a href="movies/shang.html" class="watch2">watch now</a>
+                    </div>
+                </div>
+
+                <!-- ************************************************************* -->
+                <div class="movie-container2">
+                    <div class="img2">
+                        <img class="" src="imgs/movies/venom2018.jpg" alt="">
+                    </div>
+                    <div class="name-of-film2">
+                        <h4>Venom</h4>
+                        <h6>Action-Adventure</h6>
+                        <a href="movies/venom.htm" class="watch2">watch now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> 
+    <!-- ***************************************************************** -->
+    <!-- thried part -->
+    <section class="series">
+        <div class="heading3">
+            <div class="ab-head3">
+                <a href="series.html" class="most">Series</a>
+            </div>
+
+            <div class="contanier3">
+                <!-- **************************** -->
+                <div class="movie-container3">
+                    <div class="img3">
+                        <img class="" src="imgs/movies/mandolrn.jpg" alt="">
+                    </div>
+                    <div class="name-of-film3">
+                        <h4>The Mandalorian</h4>
+                        <h6>Action</h6>
+                        <a href="series/mandalorian.html" class="watch3">watch now</a>
+                    </div>
+                </div> 
+
+                <!-- ********************************************************* -->
+                <div class="movie-container3">
+                    <div class="img3">
+                        <img class="" src="imgs/movies/vikingjpg.jpg" alt="">
+                    </div>
+                    <div class="name-of-film3">
+                        <h4>Vikings</h4>
+                        <h6>Action-Fantasy-Drama</h6>
+                        <a href="series/vikings.html" class="watch3">watch now</a>
+                    </div>
+                </div>
+
+                <!-- ************************************************************* -->
+                <div class="movie-container3">
+                    <div class="img3">
+                        <img class="" src="imgs/movies/game-of-thrones.jpg" alt="">
+                    </div>
+                    <div class="name-of-film3">
+                        <h4>Game of Thrones</h4>
+                        <h6>Action-Fantasy-Drama</h6>
+                        <a href="series/got.html" class="watch3">watch now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> 
+    <!-- ****************************************************************-->
+    <!-- forth section -->
+    <section class="anime">
+        <div class="heading4">
+            <div class="ab-head4">
+                <a href="anime.html" class="most">Anime</a>
+            </div>
+
+            <div class="contanier4">
+                <!-- **************************** -->
+                <div class="movie-container4">
+                    <div class="img4">
+                        <img class="" src="imgs/movies/panda.jpg" alt="">
+                    </div>
+                    <div class="name-of-film4">
+                        <h4>Kung Fu Panda</h4>
+                        <h6>Action-Comedy</h6>
+                        <a href="anime/kungfu.html" class="watch4">watch now</a>
+                    </div>
+                </div> 
+
+                <!-- ********************************************************* -->
+                <div class="movie-container4">
+                    <div class="img4">
+                        <img class="" src="imgs/movies/spong-bob.jpg" alt="">
+                    </div>
+                    <div class="name-of-film4">
+                        <h4>Sponge Bob</h4>
+                        <h6>Comedy</h6>
+                        <a href="anime/spongpop.html" class="watch4">watch now</a>
+                    </div>
+                </div>
+
+                <!-- ************************************************************* -->
+                <div class="movie-container4">
+                    <div class="img4">
+                        <img class="" src="imgs/movies/car.jpg" alt="" style="width: 300px; height: 445px;"> 
+                    </div>
+                    <div class="name-of-film4">
+                        <h4>Car 3</h4>
+                        
+                        <h6>Comdey</h6>
+                        <a href="anime/cars.html" class="watch3" >watch now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

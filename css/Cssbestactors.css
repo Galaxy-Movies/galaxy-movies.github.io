@@ -1,0 +1,136 @@
+body{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url(../imgs/b2.jpg);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        height: 130vh;
+        background-attachment: fixed;
+    color:silver;}
+    .navbar{
+        background-color: #142850;
+        min-width: 300px;
+        width: 100%;
+        height: 10vh;
+        align-items: center;
+        margin: auto;
+    }
+    .navbar-list{
+        list-style: none;
+        display: flex;
+    }
+    .navbar-item{
+        display: inline-block; /*عشان اخلي العناصر جمب بعض*/
+        height: 50px;
+        line-height: 50px; /*عشان اخلي النص في المنتصف*/
+        width: 10rem;
+        text-align: center;
+
+    }
+    .navbar-item:hover{
+        background-color: #27496d;
+    }
+    
+    
+    .navbar-link{
+        color: white;
+        text-decoration: none;
+        display: block;/*مدي الينك في مربع النص*/
+        text-transform: capitalize;
+    }
+ 
+ 
+ 
+
+
+mark{
+      color: blue;
+      background-color: black;
+  }
+h1{
+color: red;
+font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+text-align: center;
+font-style: oblique;
+border: 7px white solid;
+width: 30%;
+padding: auto;
+margin: auto;
+background-color: black;
+}
+.x2{
+text-align: center;
+}
+details{
+
+    color: rgb(69, 32, 172);
+    text-align: center;
+    cursor: grab;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: xx-large;
+    border: 10px white solid;
+    right: 50%;
+    width: 40%;
+    background-color: black;
+    padding: auto;
+    margin: auto;
+}
+
+summary:hover{
+    color: red;
+}
+a{
+cursor: grab;
+color: blue;
+text-decoration: none;
+font-size: x-large;
+}
+a:hover{
+
+    color: red;
+}
+img{
+   border: 10px white solid;
+} 
+ul{
+  text-align: left;
+}
+
+ 
+table{
+    text-align: center;
+    border: 1px white solid;
+    width: 80%; 
+    top: 50%; 
+    
+    border-spacing: 5px;
+    padding: auto; 
+    color: black;
+    padding: auto;
+    margin: auto;
+}
+th{
+    background-color:teal;
+    border: 1px white solid;
+    border-spacing: 10px;
+    width: 400px;
+    padding: 0.5rem;
+    font-weight: bold;
+}
+td{
+    background-color:white;
+    border: 1px white solid;
+    border-spacing: 10px;
+    width: 400px;
+    padding: 0.5rem;
+    font-weight: bold;
+}
+
+.a{
+font-size: x-large;
+font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+p{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-style: oblique;
+}

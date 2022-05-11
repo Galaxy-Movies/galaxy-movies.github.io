@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Survey</title>
+		<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+		<style>
+		@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200&display=swap');
+		
+			html {
+				scroll-behavior: smooth;
+			}
+			
+			*{
+				color: white;
+				font-family: 'Source Sans Pro', sans-serif;
+				border-radius: 20px;
+			}
+			
+			::placeholder{
+				color: #adadad;
+				font-weight: 270; /*goes between 100 and 1000*/
+			}
+			
+			/*--------------------------------- Navigation Bar ---------------------------------*/
+			.nav_bar{
+				display: flex;
+				flex-flow: column wrap;
+				width: 100%;
+				height: 60px;
+				justify-content: center;
+				align-items: center;
+			}
+			
+			.logo{
+				display: flex;
+				height: 80%;
+				width: 110px;
+				opacity: 50%;
+				margin-left: 3%;
+			}
+			
+			.nav_bar a:link{
+				text-decoration: none;
+			}
+			
+			.nav_bar a:hover{
+				color: rgb(230, 230, 230);
+				font-weight: 900;
+			}
+			
+			.sign_up{
+				padding: 5px;
+				border: #909090 solid 2px;
+			}
+			.sign_up:hover{
+				border: rgb(230, 230, 230) solid 2px;
+			}
+			
+			.material-icons.search{
+				color: rgb(200, 200, 200);
+			}
+			
+			.material-icons.search:hover{
+				font-size: 26px;
+				color: rgb(200, 200, 200);
+				font-weight: 500;
+			}
+			
+			/*------------------------------------------------------------------------------------------------*/
+			
+			body{
+			
+				display: flex;
+				flex-flow: column wrap;
+				justify-content: center;
+				align-items: center;
+				font-size: 30px;
+				
+				/*background image effect by Abdulrahman Ahmed*/
+			
+				background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url(imgs/surveyAndSearchBackground.jpg);
+				background-repeat: no-repeat;
+				background-position: center;
+				background-size: cover;
+				background-attachment: fixed;
+			}
+			
+			.container{
+				display: flex;
+				flex-flow: wrap column;
+				justify-content: center;
+				align-items: center;
+				width: 70%;
+			}
+			
+			form{
+				width: 80%;
+			}
+			
+			ol{
+				padding-inline-start: 0px; /* I found it with value 40px in the source in chrome*/
+			}
+			
+			li{
+				margin-left: 15px;
+			}
+			
+			div {
+				border: solid white 2px;
+				padding: 50px 50px;
+				margin: 50px 0px;
+			}
+			
+			ol div{
+				background-color: rgba(0, 0, 0, .4)
+			}
+			
+			
+			/*----------------------- submit and reset buttons ---------------------------*/
+			input[type="submit"], input[type="reset"]{
+				border: none;
+				width: 200px;
+				display: block;
+				margin: 15px 0px;
+				padding: 10px;
+				background-color: rgba(200,200,200, .8) !important;
+				color: black;
+				font-weight: 700;
+				font-size: 23px;
+				text-align: center;
+				cursor: pointer;
+			}
+			input[type="submit"]:hover, input[type="reset"]:hover{
+				background-color: rgba(40,40,40, .8) !important;
+				color: rgb(200,200,200);
+			}
+			input[type="submit"]:active, input[type="reset"]:active{
+				font-size: 24px;
+			}
+			
+			
+			/*----------------------- text and number feilds and textarea ---------------------------*/
+			input[type="text"], input[type="email"]{
+				border: none;
+				border-radius: 10px;
+				min-width: 300px;
+				font-size: 22px;
+				line-height: 45px;
+				background-color: rgba(80,80,80, .3);
+				margin-top: 10px;
+				text-indent: 10px;
+			}
+			
+			input[type="number"]{
+				border: none;
+				outline: none;
+				border-radius: 10px;
+				font-size: 22px;
+				line-height: 45px;
+				text-align: center;
+				background-color: rgba(80,80,80, .3);
+				margin-top: 10px;
+				margin-right: 10px;
+			}
+			
+			textarea{
+				border: none;
+				border-radius: 10px;
+				font-size: 22px;
+				line-height: 45px;
+				background-color: rgba(80,80,80, .3);
+				margin-top: 10px;
+			}
+			
+			input[type="text"]:hover, input[type="email"]:hover{
+				outline: 2px solid white;
+			}
+			
+			textarea, label.text_label{
+				display: block;
+			}	
+			/*--------------------------- select --------------------------------------*/
+			select{
+				border: none;
+				border-radius: 10px;
+				min-width: 300px;
+				font-size: 26px;
+				margin-top: 10px;
+				text-indent: 10px;
+				background: rgba(40,40,40);
+			}
+			
+			/*----------------- radio buttons and checkboxes ----------------------------------*/
+			
+			input[type="radio"], input[type="checkbox"]{
+				display: inline;
+				width: 0;      /* display: none; --> raise errors when you try to validate */
+				height: 0;
+			}
+
+			label.radio_button, label.check_box{
+				display: inline-block; /* to allow width to work */
+				margin: 5px 12px;
+				padding: 10px;
+				background-color: rgba(40,40,40, .8);
+				color: rgb(200,200,200);
+				font-weight: 700;
+				font-size: 23px;
+				text-align: center;
+				width: 70%;
+				max-width: 500px;
+				cursor: pointer;
+			}
+			
+			li label:first-of-type{
+				margin-left: 0 !important;
+			}
+			
+			label.check_box{
+				border-radius: 7px;
+			}
+
+			label.radio_button:hover, label.check_box:hover {
+				outline: solid rgba(200,200,200, .8) 2px;
+				
+			}
+			
+			label.radio_button:active, label.check_box:active {
+				font-size: 26px;
+			}
+
+			input:checked + label{
+				
+				background-color: rgba(200,200,200, .8) !important;
+				color: black;
+				
+			}
+			
+		</style>
+	</head>
+	<body>
+	<nav class="nav_bar">
+		<a href="index.html" class="logo"><img src="imgs/GloGo.png"></a>
+		<a href="index.html">Home</a>
+		<a href="anime.html">Anime</a>
+		<a href="movies.html">Action</a>
+		<a href="series.html">Series</a>
+		<a href="search.html"><i class="material-icons search">search<span>Search</span></i></a>
+		<div class="sign_up"><a href="login.html">Log In</a></div>
+	</nav>
+	
+	<div class="container">
+		<h1>Survey Form</h1>
+		<h5>Share your taste in movies with us</h1>
+		<p>Note: Personal questions are <b>optional</b>, feel free to <a href="#movie-pref">skip them.</a></p>
+		<form target="_self" method="POST" >
+			<fieldset id = "personal-info">
+				<legend>Personal Info</legend>
+					<ol>
+					<div>
+						<li>
+							<label class="text_label">What is your first name? </label>
+							<input id="first-name" type="text" placeholder="Enter your first name here" value="John" autocomplete="on" maxlength="15" />
+						</li>
+					</div>
+					<div>
+						<li>
+							<label class="text_label">What is your last name? </label>
+							<input id="last-name" type="text" placeholder="Enter your last name here" value="Snow" autocomplete="on" maxlength="15" />
+						</li>
+					</div>
+					<div>					
+						<li>
+							<label class="text_label">Enter your Email</label>
+							<input style="width: 70%; min-width: 250px;" id="email" type="email" placeholder="We won't spam you" value="john.snow22@got.com" />
+						</li>
+					</div>
+					<div>
+						<li>
+							<p>Choose your gender</p>
+							
+							<input type="radio" id="male" name="gender" value="male" />
+							<label class="radio_button" for="male">Male</label>
+							
+							<input type="radio" id="female" name="gender" value="female" />
+							<label class="radio_button"for="female">female</label>
+						</li>
+					</div>
+					<div>
+						<li>
+							<label for="age" class="text_label">How old are you? </label>
+							<input type="number" id="age" min="6" max="100" value="20" /> <label for="age">years</label>	
+						</li>
+					</div>
+					</ol>
+			</fieldset>
+			
+			<fieldset id="movie-pref">
+				<legend>Movie Preferences</legend>
+					<ol start="6">
+					<div>
+						<li>
+							<p>Where do you prefer to watch a movie? </p>
+							
+							<input type="radio" id="cinema" name="fav-place" value="cinema" required="true" />
+							<label class="radio_button" for="cinema">Cinema</label>
+							
+							<input type="radio" id="tv" name="fav-place" value="tv" />
+							<label class="radio_button" for="tv">On TV</label>
+							
+							<input type="radio" id="internet" name="fav-place" value="internet" />
+							<label class="radio_button" for="internet">On the internet</label>
+						</li>
+					</div>
+					<div>
+						<li>
+							<p>What type of movies do you like?</p>
+							
+							<input type="checkbox" id="action" name="fav-type" value="action" />
+							<label class="check_box" for="action">Action</label>
+							
+							<input type="checkbox" id="horror" name="fav-type" value="horror" />
+							<label class="check_box" for="horror">Horror</label>
+							
+							<input type="checkbox" id="drama" name="fav-type" value="drama" />
+							<label class="check_box" for="drama">Drama</label>
+							
+							<input type="checkbox" id="romance" name="fav-type" value="romance" />
+							<label class="check_box" for="romance">Romance</label>
+							
+							<input type="checkbox" id="comedy" name="fav-type" value="comedy" />
+							<label class="check_box" for="comedy">Comedy</label>
+							
+							<input type="checkbox" id="documentry" name="fav-type" value="documentry" />
+							<label class="check_box" for="documentry">Documentry</label>
+							
+							<input type="checkbox" id="adventure" name="fav-type" value="adventure" />
+							<label class="check_box" for="adventure">Adventure</label>
+							
+						</li>
+					</div>
+					<div>
+						<li>
+							<p>How often do you watch movies? </p>
+							
+							<input type="radio" id="once-a-month" name="watching-time" value="once-a-month" required="true" />
+							<label class="radio_button" for="once-a-month">Once a month</label>
+							
+							<input type="radio" id="once-a-week" name="watching-time" value="once-a-week" />
+							<label class="radio_button" for="once-a-week">Once a week</label>
+							
+							<input type="radio" id="twice-a-week" name="watching-time" value="twice-a-week" />
+							<label class="radio_button" for="twice-a-week">Twice a week</label>
+							
+							<input type="radio" id="three-to-five-a-week" name="watching-time" value="three-to-five-a-week" />
+							<label class="radio_button" for="three-to-five-a-week">Three to five times a week</label>
+							
+							<input type="radio" id="every-day" name="watching-time" value="every-day" />
+							<label class="radio_button" for="every-day">Every day</label>
+						</li>
+					</div>
+					<div>
+						<li>						
+							<p>What is the most important characteristic of a good movie? </p>
+							
+							<input type="radio" id="quality-of-story" name="favchar" value="quality-of-story" required="true" />
+							<label class="radio_button" for="quality-of-story">Quality of story</label>
+							
+							<input type="radio" id="acting" name="favchar" value="acting" />
+							<label class="radio_button" for="acting">Acting</label>
+							
+							<input type="radio" id="graphical-effects" name="favchar" value="graphical-effects" />
+							<label class="radio_button" for="graphical-effects">Graphical effects</label>
+							
+							<input type="radio" id="other-char" name="favchar" value="other-char" />
+							<label class="radio_button" for="other-char">Other</label>
+						</li>
+					</div>
+					<div>
+						<li>						
+							<p>What percentage of movies, that you've watched, do you consider bad or boring? </p>
+							
+							<input type="radio" id="ten-perc" name="boring" value="ten-perc" required="true" />
+							<label class="radio_button"  for="ten-perc">10%</label>
+							
+							<input type="radio" id="twenty-five-perc" name="boring" value="twenty-five-perc" />
+							<label class="radio_button" for="twenty-five-perc">25%</label>
+							
+							<input type="radio" id="fourty-per" name="boring" value="fourty-per" />
+							<label class="radio_button" for="fourty-per">40%</label>
+							
+							<input type="radio" id="fifty-per" name="boring" value="fifty-per" />
+							<label class="radio_button" for="fifty-per">50%</label>
+							
+							<input type="radio" id="seventy-per" name="boring" value="seventy-per" />
+							<label class="radio_button" for="seventy-per">70%</label>
+						</li>
+					</div>
+					<div>
+						<li>						
+							<label for="soundtrack" class="text_label">How important is the soundtrack to you in a movie?</label>
+							<select id="soundtrack" name="soundtrack" >
+								<option value="very-important">Very important</option>
+								<option value="important">Important</option>
+								<option value="unimportant">Unimportant</option>
+								<option value="not-important">Not important at all</option>
+							</select>
+						</li>
+					</div>
+					<div>
+						<li>
+							<label>Tell us about a movie you liked.</label>
+							<textarea name="message" rows="6" cols="30" placeholder="Tell us about the best movie you've seen in brief details"> </textarea>
+						</li>
+					</div>
+					</ol>
+			</fieldset>
+			<input type="reset" onclick="return confirm('Are you sure you want to erase all answers?')" />
+			<input type="submit" value="Submit Answers" onclick="return confirm('Are you sure you want to submit?') "  />
+		</form>
+	</div>
+		<script>
+			
+		</script>
+	</body>
+</html>

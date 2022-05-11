@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Search</title>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+	<style>
+		@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200&display=swap');
+
+		*{
+			margin: 0;
+			padding: 0;
+			font-family: 'Source Sans Pro', sans-serif;
+			border-radius: 20px;
+		}
+		
+		/*--------------------------------- Navigation Bar ---------------------------------*/
+		.nav_bar{
+			display: flex;
+			flex-flow: row wrap;
+			width: 100%;
+			height: 60px;
+			padding: 10px;
+			justify-content: space-around;
+			align-items: center;
+			font-size: 30px;
+		}
+		
+		.logo{
+			display: flex;
+			height: 80%;
+			width: 110px;
+			opacity: 50%;
+			margin-left: 3%;
+		}
+		
+		.nav_bar a:link{
+			text-decoration: none;
+		}
+		
+		.nav_bar a:hover{
+			color: rgb(230, 230, 230);
+			font-weight: 900;
+		}
+		
+		.sign_up{
+			padding: 5px;
+			border: #909090 solid 2px;
+		}
+		
+		.sign_up:hover{
+			border: rgb(230, 230, 230) solid 2px;
+		}
+		
+		.material-icons.search.link{
+			color: rgb(220, 220, 220);
+		}
+		
+		.material-icons.search.link:hover{
+			font-size: 26px;
+			color: rgb(200, 200, 200);
+			font-weight: 500;
+		}
+		/*-----------------------------------------------------------------------------------------------------*/
+		body{
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			
+			/*background image effect by Abdulrahman Ahmed*/
+			
+			background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url(imgs/surveyAndSearchBackground.jpg);
+			background-repeat: no-repeat;
+			background-position: center;
+			background-size: cover;
+			background-attachment: fixed;
+			overflow-x: hidden;
+		}
+		
+		.middle-content{
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			margin-top: 40px;
+		}
+		div.container{
+			display: flex;
+			flex-flow: wrap row;
+			width: 52%;
+			justify-content: space-around;
+			align-content: flex-start;
+			align-items: flex-start;
+		}
+
+		div.container .grid-view{
+			display: flex;
+			flex-flow: wrap row;
+			width: 100%;
+			justify-content: space-around;
+			align-content: flex-start;
+			align-items: flex-start;
+			
+		}
+		div.container .list-view{
+			display: none;
+			flex-flow: wrap row;
+			width: 100%;
+			justify-content: space-around;
+			align-content: flex-start;
+			align-items: flex-start;
+
+		}
+		
+		.container .movie {
+			margin: 5px;
+			margin-bottom: 15px;
+		}
+		.movie:hover{
+			background-color: rgba(255,255,255, .1);
+			border-radius: 20px;
+		}
+		
+		.movie:active{
+			background-color: transparent;
+		}
+		.movie img{
+			width: 160px;
+			height: 240px;
+			border-radius: 20px;
+		}
+		
+		.movie-details h2{
+			text-align: center;
+			white-space: wrap;
+			width: 160px;
+			word-wrap: break-word;
+			font-size: 20px;
+			
+		}
+		
+		a:link, a:hover, a:active, a:visited{
+			color: white;
+			text-decoration: none;
+		}
+		
+		/*--------------------search bar----------------------*/
+		.search-container{
+			margin: 10px;
+			display: flex;
+			align-items: center;
+			background-color: rgba(150,150,150, .3);
+			border-radius: 15px;
+			height: 40px;
+		}
+		.search-container:hover, .search-container:focus-within{
+			outline: solid 2px rgba(200,200,200, .5);
+		}
+		
+		#search-box{
+			border: none;
+			outline: none;
+			padding: 0px;
+			margin: 5px;
+			font-size: 25px;
+			font-weight: bold;
+			border-radius: 5px;
+			background-color: transparent;
+			color: rgb(200,200,200);
+		}
+		
+		.search-container .material-icons.search{
+			float: left;
+			padding: 5px 0px 5px 10px;
+			cursor: pointer;
+			font-size: 25px;
+			color: #707070;
+		}
+		/*------------------List and grid icons---------------*/
+		
+		.grid-list input{
+			display: none;
+		}
+		.material-icons.displayIcon{
+			cursor: pointer;
+			color: #adadad;
+			font-size: 40px;
+			
+		}		
+		.material-icons.displayIcon:hover{
+			color: white !important; 
+		}		
+		.material-icons.displayIcon:active{
+			color: #adadad !important; 
+		}
+		/*------------------ List view---------------*/
+		
+		.flex-link{
+			display: flex;
+			
+		}
+		
+		.movie-details .flex-title{
+			text-align: left;
+			font-size: 30px;
+			width: 100%;
+			padding-left: 10px;
+		}
+		
+		.movie-details p{
+			font-size: 20px;
+			color: #adadad;
+			padding: 10px;
+		}
+		
+		
+		
+		/*------------------ footer ---------------*/
+		/*.footer{
+			height: 300px;
+			width: 100%;
+			border: 2px solid white;
+			background-color: #212121;
+			color: #adadad;
+			opacity: 10%;
+		}*/
+
+
+	</style>
+</head>
+<body>
+	<nav class="nav_bar">
+		<a href="index.html" class="logo"><img src="imgs/GloGo.png"></a>
+		<a href="index.html">Home</a>
+		<a href="anime.html">Anime</a>
+		<a href="movies.html">Action</a>
+		<a href="series.html">Series</a>
+		<a href="survey.htm">Survey</a>
+		<div class="sign_up"><a href="login.html">Log In</a></div>
+	</nav>
+	<div class="middle-content">
+		<form>
+			<div class="search-container">
+			<i class="material-icons search">search</i>
+			<input type="text" id="search-box" placeholder=" Search movies..." onkeyup="search()" autocomplete="off">
+			</div>
+		</form>	
+		<div class="grid-list">
+		
+			<label for="grid-button"><i class="material-icons displayIcon"> grid_view</i></label>
+			<input type="radio" name="grid-list" id="grid-button" checked="checked" onclick="gridList()">
+			
+			<label for="list-button"><i class="material-icons displayIcon"> view_list</i></label>
+			<input type="radio" name="grid-list" id="list-button" onclick='gridList()'>
+		
+		</div>
+		<div class="container" id="movie-list">
+			<div class="grid-view">
+				<div class="movie">
+					<a href="movies/avengers.html">
+						<img src="imgs/ph1.jpg"> 
+						<div class="movie-details">
+							<h2>Avengers</h2>
+						</div>
+					</a>
+				</div>
+				<div class="movie">
+					<a href="movies/bat.html">
+						<img src="imgs/ph2.jpg"> 
+						<div class="movie-details">
+							<h2>Batman</h2>
+						</div>
+					</a>
+				</div>
+				<div class="movie">
+					<a href="movies/doctor.html">
+						<img src="imgs/ph3.jpg"> 
+						<div class="movie-details">
+							<h2>Doctor Strange</h2>
+						</div>
+					</a>
+				</div>
+				<div class="movie">
+					<a href="movies/hulk.html">
+						<img src="imgs/ph4.jpg"> 
+						<div class="movie-details">
+							<h2>Hulk</h2>
+						</div>
+					</a>
+				</div>
+				<div class="movie">
+					<a href="movies/iron.html">
+						<img src="imgs/ph5.jpg"> 
+						<div class="movie-details">
+							<h2>Iron Man</h2>
+						</div>
+					</a>
+				</div>
+				<div class="movie">
+					<a href="movies/shang.html">
+						<img src="imgs/ph6.jpg"> 
+						<div class="movie-details">
+							<h2>Shang</h2>
+						</div>
+					</a>
+				</div>
+				<div class="movie">
+					<a href="movies/spider.html">
+						<img src="imgs/ph7.jpg"> 
+						<div class="movie-details">
+							<h2>Spider Man</h2>
+						</div>
+					</a>
+				</div>
+				<div class="movie">
+					<a href="movies/thor.html">
+						<img src="imgs/ph8.jpg"> 
+						<div class="movie-details">
+							<h2>Thor</h2>
+						</div>
+					</a>
+				</div>
+				<div class="movie">
+					<a href="movies/venom.htm">
+						<img src="imgs/ph9.jpg"> 
+						<div class="movie-details">
+							<h2>Venom</h2>
+						</div>
+					</a>
+				</div>
+				<div class="movie">
+					<a href="series/arrow.html">
+						<img src="imgs/ph10.jpg"> 
+						<div class="movie-details">
+							<h2>Arrow</h2>
+						</div>
+					</a>
+				</div>
+				<div class="movie">
+					<a href="series/breaking.html">
+						<img src="imgs/ph11.jpg"> 
+						<div class="movie-details">
+							<h2>Breaking Bad</h2>
+						</div>
+					</a>
+				</div>
+				<div class="movie">
+					<a href="series/dark.html">
+						<img src="imgs/ph12.jpg"> 
+						<div class="movie-details">
+							<h2>Dark</h2>
+						</div>
+					</a>
+				</div>
+				<div class="movie">
+					<a href="series/got.html">
+						<img src="imgs/ph13.jpg"> 
+						<div class="movie-details">
+							<h2>GOT</h2>
+						</div>
+					</a>
+				</div>
+				<div class="movie">
+					<a href="series/lucifer.html">
+						<img src="imgs/ph14.jpg"> 
+						<div class="movie-details">
+							<h2>Lucifer</h2>
+						</div>
+					</a>
+				</div>
+				<div class="movie">
+					<a href="series/mandalorian.html">
+						<img src="imgs/ph15.jpg"> 
+						<div class="movie-details">
+							<h2>Mandalorian</h2>
+						</div>
+					</a>
+				</div>
+				<div class="movie">
+					<a href="series/peaky.html">
+						<img src="imgs/ph16.jpg"> 
+						<div class="movie-details">
+							<h2>Peaky Blinders</h2>
+						</div>
+					</a>
+				</div>
+				<div class="movie">
+					<a href="series/prison.html">
+						<img src="imgs/ph17.jpg"> 
+						<div class="movie-details">
+							<h2>Prison Break</h2>
+						</div>
+					</a>
+				</div>
+				<div class="movie">
+					<a href="series/vikings.html">
+						<img src="imgs/ph18.jpg"> 
+						<div class="movie-details">
+							<h2>vikings</h2>
+						</div>
+					</a>
+				</div>
+			</div>			
+			<div class="list-view"><!------------------- List view----------------------------------------------------------------->
+				<div class="movie">
+					<a href="movies/avengers.html" class="flex-link">
+						<img src="imgs/ph1.jpg"> 
+						<div class="movie-details">
+							<h2 class="flex-title">Avengers</h2>
+							<p>Stephanie, a single mother, along with Sean, Emily's husband,
+							set out to unravel the mystery behind Emily's disappearance.
+							However, they counter secrets much more than what they bargained for.</p>
+						</div>
+					</a>
+				</div>
+				<div class="movie">
+					<a href="movies/bat.html" class="flex-link">
+						<img src="imgs/ph2.jpg"> 
+						<div class="movie-details">
+							<h2 class="flex-title">Batman</h2>
+							<p>Stephanie, a single mother, along with Sean, Emily's husband,
+							set out to unravel the mystery behind Emily's disappearance.
+							However, they counter secrets much more than what they bargained for.</p>
+						</div>
+					</a>
+				</div>
+				<div class="movie">
+					<a href="movies/doctor.html" class="flex-link">
+						<img src="imgs/ph3.jpg"> 
+						<div class="movie-details">
+							<h2 class="flex-title">Doctor Strange</h2>
+							<p>Stephanie, a single mother, along with Sean, Emily's husband,
+							set out to unravel the mystery behind Emily's disappearance.
+							However, they counter secrets much more than what they bargained for.</p>
+						</div>
+					</a>
+				</div>
+				<div class="movie">
+					<a href="movies/hulk.html" class="flex-link">
+						<img src="imgs/ph4.jpg"> 
+						<div class="movie-details">
+							<h2 class="flex-title">Hulk</h2>
+							<p>Stephanie, a single mother, along with Sean, Emily's husband,
+							set out to unravel the mystery behind Emily's disappearance.
+							However, they counter secrets much more than what they bargained for.</p>
+						</div>
+					</a>
+				</div>
+				<div class="movie">
+					<a href="movies/iron.html" class="flex-link">
+						<img src="imgs/ph5.jpg"> 
+						<div class="movie-details">
+							<h2 class="flex-title">Iron Man</h2>
+							<p>Stephanie, a single mother, along with Sean, Emily's husband,
+							set out to unravel the mystery behind Emily's disappearance.
+							However, they counter secrets much more than what they bargained for.</p>
+						</div>
+					</a>
+				</div>
+				<div class="movie">
+					<a href="movies/shang.html" class="flex-link">
+						<img src="imgs/ph6.jpg"> 
+						<div class="movie-details">
+							<h2 class="flex-title">Shang</h2>
+							<p>Stephanie, a single mother, along with Sean, Emily's husband,
+							set out to unravel the mystery behind Emily's disappearance.
+							However, they counter secrets much more than what they bargained for.</p>
+						</div>
+					</a>
+				</div>
+				<div class="movie">
+					<a href="movies/spider.html" class="flex-link">
+						<img src="imgs/ph7.jpg"> 
+						<div class="movie-details">
+							<h2 class="flex-title">Spider Man</h2>
+							<p>Stephanie, a single mother, along with Sean, Emily's husband,
+							set out to unravel the mystery behind Emily's disappearance.
+							However, they counter secrets much more than what they bargained for.</p>
+						</div>
+					</a>
+				</div>
+				<div class="movie">
+					<a href="movies/thor.html" class="flex-link">
+						<img src="imgs/ph8.jpg"> 
+						<div class="movie-details">
+							<h2 class="flex-title">Thor</h2>
+							<p>Stephanie, a single mother, along with Sean, Emily's husband,
+							set out to unravel the mystery behind Emily's disappearance.
+							However, they counter secrets much more than what they bargained for.</p>
+						</div>
+					</a>
+				</div>
+				<div class="movie">
+					<a href="movies/venom.html" class="flex-link">
+						<img src="imgs/ph9.jpg"> 
+						<div class="movie-details">
+							<h2 class="flex-title">Venom</h2>
+							<p>Stephanie, a single mother, along with Sean, Emily's husband,
+							set out to unravel the mystery behind Emily's disappearance.
+							However, they counter secrets much more than what they bargained for.</p>
+						</div>
+					</a>
+				</div>
+				<div class="movie">
+					<a href="series/arrow.html" class="flex-link">
+						<img src="imgs/ph10.jpg"> 
+						<div class="movie-details">
+							<h2 class="flex-title">Arrow</h2>
+							<p>Stephanie, a single mother, along with Sean, Emily's husband,
+							set out to unravel the mystery behind Emily's disappearance.
+							However, they counter secrets much more than what they bargained for.</p>
+						</div>
+					</a>
+				</div>
+				<div class="movie">
+					<a href="series/breaking.html" class="flex-link">
+						<img src="imgs/ph11.jpg"> 
+						<div class="movie-details">
+							<h2 class="flex-title">Breaking Bad</h2>
+							<p>Stephanie, a single mother, along with Sean, Emily's husband,
+							set out to unravel the mystery behind Emily's disappearance.
+							However, they counter secrets much more than what they bargained for.</p>
+						</div>
+					</a>
+				</div>
+				<div class="movie">
+					<a href="series/dark.html" class="flex-link">
+						<img src="imgs/ph12.jpg"> 
+						<div class="movie-details">
+							<h2 class="flex-title">Dark</h2>
+							<p>Stephanie, a single mother, along with Sean, Emily's husband,
+							set out to unravel the mystery behind Emily's disappearance.
+							However, they counter secrets much more than what they bargained for.</p>
+						</div>
+					</a>
+				</div>
+				<div class="movie">
+					<a href="series/got.html" class="flex-link">
+						<img src="imgs/ph13.jpg"> 
+						<div class="movie-details">
+							<h2 class="flex-title">GOT</h2>
+							<p>Stephanie, a single mother, along with Sean, Emily's husband,
+							set out to unravel the mystery behind Emily's disappearance.
+							However, they counter secrets much more than what they bargained for.</p>
+						</div>
+					</a>
+				</div>
+				<div class="movie">
+					<a href="series/lucifer.html" class="flex-link">
+						<img src="imgs/ph14.jpg"> 
+						<div class="movie-details">
+							<h2 class="flex-title">Lucifer</h2>
+							<p>Stephanie, a single mother, along with Sean, Emily's husband,
+							set out to unravel the mystery behind Emily's disappearance.
+							However, they counter secrets much more than what they bargained for.</p>
+						</div>
+					</a>
+				</div>
+				<div class="movie">
+					<a href="series/mandalorian.html" class="flex-link">
+						<img src="imgs/ph15.jpg"> 
+						<div class="movie-details">
+							<h2 class="flex-title">Mandalorain</h2>
+							<p>Stephanie, a single mother, along with Sean, Emily's husband,
+							set out to unravel the mystery behind Emily's disappearance.
+							However, they counter secrets much more than what they bargained for.</p>
+						</div>
+					</a>
+				</div>
+				<div class="movie">
+					<a href="series/peaky.html" class="flex-link">
+						<img src="imgs/ph16.jpg"> 
+						<div class="movie-details" >
+							<h2 class="flex-title">Peaky Blinders</h2>
+							<p>Stephanie, a single mother, along with Sean, Emily's husband,
+							set out to unravel the mystery behind Emily's disappearance.
+							However, they counter secrets much more than what they bargained for.</p>
+						</div>
+					</a>
+				</div>
+				<div class="movie">
+					<a href="series/prison.html" class="flex-link">
+						<img src="imgs/ph17.jpg"> 
+						<div class="movie-details">
+							<h2 class="flex-title">Prison Break</h2>
+							<p>Stephanie, a single mother, along with Sean, Emily's husband,
+							set out to unravel the mystery behind Emily's disappearance.
+							However, they counter secrets much more than what they bargained for.</p>
+						</div>
+					</a>
+				</div>
+				<div class="movie">
+					<a href="series/vikings.html" class="flex-link">
+						<img src="imgs/ph18.jpg"> 
+						<div class="movie-details">
+							<h2 class="flex-title">Vikings</h2>
+							<p>Stephanie, a single mother, along with Sean, Emily's husband,
+							set out to unravel the mystery behind Emily's disappearance.
+							However, they counter secrets much more than what they bargained for.</p>
+						</div>
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--<footer class="footer">
+	
+	<div class="about-us">
+		<h1>About Us</h1>
+	</div>
+	
+	</footer>-->
+	<script src="js/search.js"></script>
+</body>
+	
+</html>
