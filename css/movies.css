@@ -40,7 +40,7 @@ li {
 }
 
 body {
-    background-image: url(https://wallpapercave.com/wp/wp4926136.jpg);
+    background-image:linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)) , url(https://wallpapercave.com/wp/wp4926136.jpg);
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
