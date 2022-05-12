@@ -1,0 +1,152 @@
+*{
+    margin: 0%;
+    padding: 0%;
+    /* لصفحه الويب وبخليها عن طريق اني بخلي دول بصفر reset معني الحته دي اني بعمل  */
+/* عشان لما حطيت الصوره كان في الاساس ليهم مارجن وبادنج معينه فكان حواف الصوره بيضه كده فخيلتهم باصفار عشان تتظبط */
+}
+.background{
+    /* background-image: url("../../imgs/background.png"); */
+    background-image: url(../imgs/movies/login.jpg);
+    background-color: #000;
+    background-size: cover;
+    background-repeat: no-repeat; 
+    /* كان معمولها تكرارcontainلما كنت عامل اللي فوقيها  */
+    height: 100vh;
+   /* يعني النسبه المئويه يعني هاخد 100%من الطول vh */
+   margin: 0%;
+   padding: 0%;
+}
+
+.center{
+position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* لسه متعملتهاش */
+    background-color: rgb(14 6 1 / 85%);
+    border-radius: 0px;
+    width: 400px;
+    height: 492px;
+}
+.login{
+    text-align: center;
+    padding: 20px 0 20px 0;
+/* انا عوزت اديها هوامش من تحت بس عشان اعمل زي خط كده بس بالبوردر */
+    border-bottom: 1px solid gainsboro;
+}
+.login h1{
+    color: white;
+}
+.hold {
+     padding: 0 40px;
+     box-sizing: border-box;
+     /* مش فاهمها */
+}
+.a{
+    position: relative;
+    border-bottom: 2px solid #adadad ;
+    margin: 30px 0;
+}
+.a input{
+    /*   سواء ايميل او باسوردinput هنا انا بعدل علي اي حاجه فيها فيها ال */
+  /* a  للي ليها كلاس  */
+width: 100%;
+border: none;
+background: none;
+padding: 0 5px;
+/* انا عاملها كده عشان عايزها تاخد هوامش يمين وشمال بس */
+height: 40px;
+font-size: 16px;
+outline:none;
+/* مش فاهمها */
+}
+.a label{
+   position: absolute;
+    top: 50%;
+    left: 5px;
+    /* بيبعدها عن الشمال 5 بيكسل */
+    color: #adadad;
+  /* a للحاجات اللي ليها كلاس  label  هنا انا بعدل علي اي حاجه فيها  */
+    transform: translateY(-50%);
+    /* دي نزلها شويه عشان الماوس يبدا من عنده */
+    font-size: 15px;
+    pointer-events: none;
+    /* دي عشان لو عايز تضغط وتديك منظر كده */
+}
+.forget {
+ margin: -5px 0 20px 0;
+ color: #adadad ;
+ text-decoration: none;
+cursor: pointer;
+/* عشان اول ما تيجي عن الكلمه الماوس يشاور عليها يعني */
+}
+.forget:hover{
+    text-decoration: underline;
+    /* عشان اول ما الماوس يجي عليها يعمل خط تحتها كده */
+}
+.submit input[type="submit"]{
+ /* واللي بعدها افتكر ان الانبوت جواه حاجات من ضمهنم التايب لكن لما عملتهم لازقين في بعض هو فهم ان الانبوت جواه التايب ده inputخد بالك انا لما كنت عامل مسافه بين ال */
+   /* جرب تدوس بينهم مسافه وتقف بالماوس عليه وجرب تشيل المسافه واقف بالماوس عليه */
+    width: 100%;
+    height: 50px;
+    border-radius:25px ;
+    background-color: #e9eff4;
+    font-size:16px;
+    color: #141212;
+    font-weight: 500;
+    cursor: pointer;
+}
+}
+.submit input[type="submit"]:hover
+{
+/* اول ما بدوس عليها بتكبر كده او بتعمل اكشن معين */
+border-color: blueviolet;
+transition: 0.5s;
+/* اول ما الماوس يجي عليها هتدي الللون ده كده ولما تشيله بعد نص ثانيه هتتشال */
+}
+.new{
+    margin: 30px 0;
+    text-align: center;
+    right:60px
+}
+.new a{
+    text-decoration: none;
+}
+.new a:hover{
+    text-decoration: underline;
+}
+span{
+    color: #adadad ;
+    font-family:system-ui ;
+    font-size: smaller;
+}
+.new a{
+    color: white;
+}
+.footer{
+    max-width:968px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    justify-content: space-between;
+}
+.social{
+    display: flex;
+    align-items:center ;
+    position: relative;
+    left: 98px;
+    column-gap: 0.5rem;
+}
+.social .bx{
+
+    padding: 2px;
+    font-size: 2rem;
+    border-radius: 50%;
+    border: 4px solid rgb(2,3,7,0.4);
+    color: white;
+}
+.social .bx:hover{
+    background: blue;
+    color: white;
+    transition: 0.2s all linear;
+}
